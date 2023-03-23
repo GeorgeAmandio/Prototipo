@@ -4,15 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
+    android:textDirection="inherit"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        android:text="Bem-vindo ao seu App de Resumos Inteligentes !"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nomeLivro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <EditText
+        android:id="@+id/nomeLivro"
+        android:layout_width="350dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="Nome do Livro"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/nomeAutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/nomeAutor"
+        android:layout_width="351dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:hint="Nome do Autor"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/toggleDetalhes"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <ToggleButton
+        android:id="@+id/toggleCuriosidades"
+        android:layout_width="116dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="32dp"
+        android:text="curiosidades"
+        android:textOff="adicionar curiosidades"
+        android:textOn="remover curiosidades"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/resumeAI"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ToggleButton
+        android:id="@+id/toggleEmocao"
+        android:layout_width="114dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="32dp"
+        android:text="Emocao"
+        android:textOff="adicionar emoção"
+        android:textOn="Remover emoção"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/resumeAI"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ToggleButton
+        android:id="@+id/toggleDetalhes"
+        android:layout_width="116dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="32dp"
+        android:text="detalhes"
+        android:textOff="adicionar  detalhes"
+        android:textOn="remover detalhes"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/resumeAI"
+        app:layout_constraintEnd_toStartOf="@+id/toggleCuriosidades"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@+id/toggleEmocao" />
+
+    <Button
+        android:id="@+id/resumeAI"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="32dp"
+        android:text="ResumeAI"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="329dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="329dp"
+            android:textAlignment="inherit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
